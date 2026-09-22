@@ -29,9 +29,10 @@ cask "braind" do
 
   # Not notarized yet: without this, Gatekeeper refuses the first launch.
   # postflight_steps, not a `postflight do` block — Homebrew deprecated
-  # arbitrary Ruby there in favour of these declarative steps.
+  # arbitrary Ruby there in favour of these declarative steps, where
+  # appdir is a {{template token}} rather than a Ruby method.
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/BrAIn.D.app"]
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/BrAIn.D.app"]
   end
 
   caveats <<~EOS
