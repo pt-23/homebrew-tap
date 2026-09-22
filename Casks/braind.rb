@@ -17,7 +17,7 @@ cask "braind" do
   url "https://github.com/pt-23/braind-releases/releases/download/v#{version}/BrAIn.D-mac-#{arch}.zip"
   name "BrAIn.D"
   desc "Mind map where every node is a resumable AI agent session"
-  homepage "https://braind.vercel.app/"
+  homepage "https://braindub.vercel.app/"
 
   livecheck do
     url :url
