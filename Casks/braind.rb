@@ -25,6 +25,10 @@ cask "braind" do
   end
 
   depends_on formula: "tmux"
+  # The status hook that drives the live pulse and the waiting-for-input
+  # badge runs as `node <hook>.cjs` (src/main/providers/claude.ts), so
+  # node is a real runtime dependency, not just a nicety.
+  depends_on formula: "node"
   # Plain `:macos` only. A minimum version (`macos: ">= :catalina"`) is
   # disabled in Homebrew 7 with no replacement — the app bundle's own
   # LSMinimumSystemVersion is what keeps it off a too-old macOS.
