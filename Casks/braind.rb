@@ -17,12 +17,18 @@ cask "braind" do
   url "https://github.com/pt-23/braind-releases/releases/download/v#{version}/BrAIn.D-mac-#{arch}.zip"
   name "BrAIn.D"
   desc "Mind map where every node is a resumable AI agent session"
-  homepage "https://braind.vercel.app"
+  homepage "https://braind.vercel.app/"
 
-  # No `depends_on macos:` — Homebrew disabled minimum-version constraints
-  # (there's no replacement). The app bundle's own LSMinimumSystemVersion
-  # is what stops it launching on something too old.
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   depends_on formula: "tmux"
+  # Plain `:macos` only. A minimum version (`macos: ">= :catalina"`) is
+  # disabled in Homebrew 7 with no replacement — the app bundle's own
+  # LSMinimumSystemVersion is what keeps it off a too-old macOS.
+  depends_on :macos
 
   app "BrAIn.D.app"
   binary "#{appdir}/BrAIn.D.app/Contents/Resources/cli/braind"
@@ -35,6 +41,12 @@ cask "braind" do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/BrAIn.D.app"]
   end
 
+  # Maps live in each project's .braind folder and are never touched.
+  zap trash: [
+    "~/.ai-mind",
+    "~/Library/Application Support/BrAIn.D",
+  ]
+
   caveats <<~EOS
     BrAIn.D runs your agent CLI inside tmux. Install one if you haven't:
       Claude Code (recommended): https://docs.claude.com/en/docs/claude-code
@@ -42,10 +54,4 @@ cask "braind" do
     Then, in any project folder:
       braind
   EOS
-
-  # Maps live in each project's .braind folder and are never touched.
-  zap trash: [
-    "~/.ai-mind",
-    "~/Library/Application Support/BrAIn.D",
-  ]
 end
