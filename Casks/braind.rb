@@ -28,9 +28,10 @@ cask "braind" do
   binary "#{appdir}/BrAIn.D.app/Contents/Resources/cli/braind"
 
   # Not notarized yet: without this, Gatekeeper refuses the first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/BrAIn.D.app"]
+  # postflight_steps, not a `postflight do` block — Homebrew deprecated
+  # arbitrary Ruby there in favour of these declarative steps.
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/BrAIn.D.app"]
   end
 
   caveats <<~EOS
