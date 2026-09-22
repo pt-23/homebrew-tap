@@ -19,7 +19,9 @@ cask "braind" do
   desc "Mind map where every node is a resumable AI agent session"
   homepage "https://braind.vercel.app"
 
-  depends_on macos: ">= :catalina"
+  # No `depends_on macos:` — Homebrew disabled minimum-version constraints
+  # (there's no replacement). The app bundle's own LSMinimumSystemVersion
+  # is what stops it launching on something too old.
   depends_on formula: "tmux"
 
   app "BrAIn.D.app"
