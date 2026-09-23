@@ -8,9 +8,9 @@
 cask "braind" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.0.1"
-  sha256 arm:   "26cbe3756bcf1a4d66e2c32cce4a619d826a28fea61b230b478e0cacdbee931f",
-         intel: "c21ca1e137a92189d06af0470f6df122df5cb206d8cd4a25c6d22348052915d2"
+  version "0.0.2"
+  sha256 arm:   "75a3f90059b40491fe19874945dcb302fcd1932dde38c00cbbc2053104264ca3",
+         intel: "c2607e5dee1a8766dbbd68251a7fa30f3490c7710fd1c97d550661f25f86662b"
 
   # pt-23/braind-releases, not the source repo: the zips have to be
   # downloadable with no credentials, and the source repo is private.
