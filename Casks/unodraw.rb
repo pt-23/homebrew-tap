@@ -9,9 +9,9 @@
 cask "unodraw" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.1.0"
-  sha256 arm:   "6196f593e7efcc5320a8674c6fb3b57a43bfdd8ddd7cf8a8510ea775023598fe",
-         intel: "dcbcca08c8475ae148224baa07c43082f8fbba9a9c0afccea368da9a56064e47"
+  version "0.2.0"
+  sha256 arm:   "fbd0ca8536f879b6488101a70e7ab13a09dc2aae1851d467d0e25eec72ff8c02",
+         intel: "bc3dbdee1791fb27c68cfdab72fba7dd94e61bc9ffc5bc039d877cbd42e451f6"
 
   url "https://github.com/pt-23/homebrew-tap/releases/download/unodraw-v#{version}/unoDraw-#{version}-#{arch}.dmg"
   name "unoDraw"
