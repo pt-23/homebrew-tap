@@ -1,8 +1,8 @@
 class Wizkido < Formula
-  desc "WizKidz Studio CLI: write, check and upload lesson packs"
+  desc "WiseKido Studio CLI: write, check and upload lesson packs"
   homepage "https://wizkido.vercel.app/studio/tokens"
-  url "https://registry.npmjs.org/wizkido/-/wizkido-0.3.0.tgz"
-  sha256 "8735c7ae221ee918988f4fd0dada55237e3b75891981779b6fbc48b876515b55"
+  url "https://registry.npmjs.org/wizkido/-/wizkido-0.4.0.tgz"
+  sha256 "d68ddf36a839cc6a43a6c6a0e864987e5c880108532b126e708c1fb240a7a01d"
 
   depends_on "node"
 
