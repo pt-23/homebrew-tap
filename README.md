@@ -23,14 +23,14 @@ brew install --cask pt-23/tap/unodraw
 Update with `brew upgrade --cask unodraw`. The .dmgs (Apple silicon and Intel) are
 attached to this repo's own `unodraw-v<version>` releases.
 
-## wizkido
+## wizfamily
 
-The [WizKidz](https://wizkido.vercel.app) Studio CLI: write, check and upload lesson packs, for you or your AI agent.
+The [WizFamily](https://wizfamili.vercel.app) Studio CLI: write, check and upload lesson packs, for you or your AI agent.
 
 ```bash
-brew install pt-23/tap/wizkido
-wizkido login
-wizkido kit --install-skill
+brew install pt-23/tap/wizfamily
+wizfamily login
+wizfamily kit --install-skill
 ```
 
-Update with `brew upgrade wizkido`. The formula installs the [wizkido](https://www.npmjs.com/package/wizkido) npm package.
+Update with `brew upgrade wizfamily`. The formula installs the [wizfamily](https://www.npmjs.com/package/wizfamily) npm package (it was `wizkido` before).
