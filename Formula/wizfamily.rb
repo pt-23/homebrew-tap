@@ -1,8 +1,8 @@
 class Wizfamily < Formula
   desc "WizFamily Studio CLI: write, check and upload lesson packs"
   homepage "https://wizfamili.vercel.app/docs"
-  url "https://registry.npmjs.org/wizfamily/-/wizfamily-0.7.0.tgz"
-  sha256 "a45eeb61b54b82d5215c57857540954f200f48ebe14d01a1f8003cc058e74d12"
+  url "https://registry.npmjs.org/wizfamily/-/wizfamily-0.8.0.tgz"
+  sha256 "c93da988b53447e4a3393014f6fe997712c25a647f4d050aaf03ba97a5ac2be0"
 
   depends_on "node"
 
